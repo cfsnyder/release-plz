@@ -7,6 +7,7 @@ pub fn get_manifest_metadata(
 ) -> Result<cargo_metadata::Metadata, cargo_metadata::Error> {
     cargo_metadata::MetadataCommand::new()
         .no_deps()
+        .verbose(true)
         .manifest_path(manifest_path)
         .exec()
 }
